@@ -2,7 +2,7 @@
 
 namespace AbsctractFactory
 {
-    public class Catalogue
+    public class Program
     {
         public static int nbAutos = 3;
         public static int nbScooters = 2;
