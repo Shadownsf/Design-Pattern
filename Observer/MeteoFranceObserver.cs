@@ -2,12 +2,19 @@ using System;
 
 namespace Observer
 {
-    public class MeteoFranceObserver : IObserver
+    public class MeteoFranceObserver : IObserver, IDisplay
     {
+        private IObservable _station;
         private string _temperature;
-        public void update(IObservable observable)
+
+        public MeteoFranceObserver(IObservable station)
         {
-            _temperature = observable._temperature;
+            _station = station;
+        }
+        
+        public void update()
+        {
+            _temperature = _station.getState();
             display();
         }
 

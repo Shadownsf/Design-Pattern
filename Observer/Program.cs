@@ -7,8 +7,8 @@ namespace Observer
         static void Main(string[] args)
         {
             IObservable observable = new Observable();
-            observable.add(new MeteoFranceObserver());
-            observable.add(new WorldWheatherObservable());
+            observable.add(new MeteoFranceObserver(observable ));
+            observable.add(new WorldWheatherObservable(observable));
 
             while(true)
             {

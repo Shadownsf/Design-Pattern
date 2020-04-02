@@ -2,12 +2,18 @@ using System;
 
 namespace Observer
 {
-    public class WorldWheatherObservable : IObserver
+    public class WorldWheatherObservable : IObserver, IDisplay
     {
+        private IObservable _station;
         private string _temperature;
-        public void update(IObservable observable)
+
+        public WorldWheatherObservable(IObservable station)
         {
-            _temperature = observable._temperature;
+            _station = station;
+        }
+        public void update()
+        {
+            _temperature = _station.getState();
             display();
         }
 

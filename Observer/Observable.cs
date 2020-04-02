@@ -6,7 +6,7 @@ namespace Observer
     public class Observable : IObservable
     {
         public List<IObserver> _watchers;
-        public string _temperature {get; set;}
+        private string _temperature;
         public Observable()
         {
             _watchers = new List<IObserver>();
@@ -17,11 +17,16 @@ namespace Observer
             _watchers.Add(item);
         }
 
+        public string getState()
+        {
+            return _temperature;
+        }
+
         public void notify()
         {
             foreach(var item in _watchers)
             {
-                item.update(this);
+                item.update();
             }
         }
 
