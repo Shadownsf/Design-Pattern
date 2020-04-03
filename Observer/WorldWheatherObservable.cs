@@ -5,7 +5,7 @@ namespace Observer
     public class WorldWheatherObservable : IObserver, IDisplay
     {
         private IObservable _station;
-        private string _temperature;
+        private State _state;
 
         public WorldWheatherObservable(IObservable station)
         {
@@ -13,14 +13,12 @@ namespace Observer
         }
         public void update()
         {
-            _temperature = _station.getState();
+            _state = _station.getState();
             display();
         }
-
         public void display()
         {
-            Console.WriteLine($"WorldWheatherObservable : La temperature est de {_temperature} !");
+            Console.WriteLine($"WorldWheatherObservable : La temperature est de {_state.temperature} !");
         }
-
     }
 }

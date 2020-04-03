@@ -13,9 +13,11 @@ namespace Observer
             while(true)
             {
                 Console.WriteLine("\nQuelles est la temperature ?");
-                string temperature = Console.ReadLine();
+                State state = new State();
 
-                observable.update(temperature);
+                state.temperature = Console.ReadLine();
+
+                observable.update(state);
                 observable.notify();
             }      
         }

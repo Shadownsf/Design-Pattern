@@ -5,8 +5,8 @@ namespace Observer
         public void add(IObserver item);
         public void remove(IObserver item);
         public void notify();
-        public void update(string temperature);
+        public void update(State state);
 
-        public string getState();
+        public State getState();
     }
 }

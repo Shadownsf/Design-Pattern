@@ -6,20 +6,21 @@ namespace Observer
     public class Observable : IObservable
     {
         public List<IObserver> _watchers;
-        private string _temperature;
+        private State _state;
         public Observable()
         {
             _watchers = new List<IObserver>();
-            _temperature = "0";
+            _state = new State();
+            _state.temperature = "0";
         }
         public void add(IObserver item)
         {
             _watchers.Add(item);
         }
 
-        public string getState()
+        public State getState()
         {
-            return _temperature;
+            return _state;
         }
 
         public void notify()
@@ -35,9 +36,9 @@ namespace Observer
             _watchers.Remove(item);
         }
 
-        public void update(string temperature)
+        public void update(State state)
         {
-            _temperature = temperature;
+            _state = state;
         }
     }
 }
