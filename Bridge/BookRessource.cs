@@ -16,12 +16,12 @@ namespace Bridge
 
         public string getSnippet()
         {
-            return _book.Synopsys;
+            return $"SYNOPSYS:\n\t{_book.Synopsys}";
         }
 
         public string getTitle()
         {
-            return _book.Title;
+            return $"TITRE:\n\t{_book.Title}";
         }
     }
 }

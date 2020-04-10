@@ -16,12 +16,12 @@ namespace Bridge
 
         public string getSnippet()
         {
-            return _artist.Bio;
+            return $"BIO:\n\t{_artist.Bio}";
         }
 
         public string getTitle()
         {
-            return _artist.Fullname;
+            return $"ARTIST:\n\t{_artist.Fullname}";
         }
     }
 }

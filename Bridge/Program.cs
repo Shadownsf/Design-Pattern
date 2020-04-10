@@ -78,24 +78,30 @@ namespace Bridge
             View shortView3 = new ShortView(bookRessource1);
             View longView3 = new LongView(bookRessource1);
 
+            while(true)
+            {
+                Console.WriteLine("Quelle Type de view voulez-vous voir ? Short(1) : Long(2)");
 
+                string choix = Console.ReadLine();
 
-            Console.WriteLine("//// SHORT ////");
-            shortView1.show();
-            Console.WriteLine("//// LONG ////");
-            longView1.show();
-            Console.WriteLine("//////////////////////////////////////////////////////////////");
-
-            Console.WriteLine("//// SHORT ////");
-            shortView2.show();
-            Console.WriteLine("//// LONG ////");
-            longView2.show();
-            Console.WriteLine("//////////////////////////////////////////////////////////////");
-            
-            Console.WriteLine("//// SHORT ////");
-            shortView3.show();
-            Console.WriteLine("//// LONG ////");
-            longView3.show();
+                if (choix == "1")
+                {
+                    shortView1.show();
+                    Console.WriteLine("\n//////////////////////////////////////////////////////////////\n");
+                    shortView2.show();
+                    Console.WriteLine("\n//////////////////////////////////////////////////////////////\n");
+                    shortView3.show();
+                }
+                else
+                {
+                    longView1.show();
+                    Console.WriteLine("\n//////////////////////////////////////////////////////////////\n");
+                    longView2.show();
+                    Console.WriteLine("\n//////////////////////////////////////////////////////////////\n");
+                    longView3.show();
+                }
+                Console.WriteLine("\nEnd of Views\n\n");
+            }
         }
     }
 }
