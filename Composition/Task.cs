@@ -8,7 +8,7 @@ namespace Composition
 
         public override string getHtml(int tabulation = 0)
         {
-            return "\t" + _title;
+            return _title;
         }
     }
 }

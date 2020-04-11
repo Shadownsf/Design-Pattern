@@ -15,11 +15,12 @@ namespace Composition
 
         public override string getHtml(int tabulation = 0)
         {
-            string html = $"{getChecked()} {_title.ToUpper()}\n";
+            string html = $"{_title.ToUpper()}\n";
 
             foreach (var todo in _todos)
-            {       
-                html += $"{getChecked()} {todo.getHtml(++tabulation)}\n";
+            {
+                html += getTabulation(todo);
+                html += $"{todo.getHtml(++tabulation)}\n";
             }
 
             return html;
@@ -28,6 +29,16 @@ namespace Composition
         private string getChecked()
         {
             return _check ? "✅" : "❌";
+        }
+
+        private string getTabulation(TodoList todo)
+        {
+            if (todo is Project)
+            {
+                return $"\t{getChecked()} ";
+            }
+
+            return $"\t\t{getChecked()} ";
         }
     }
 }
